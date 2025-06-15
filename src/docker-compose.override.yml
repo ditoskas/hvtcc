@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  hvt.trader:
+    container_name: hvt.trader
+    restart: always
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__Database=Host=hvtradesdb;Port=5432;Database=TradesDb;Username=postgres;Password=postgres;
+    depends_on:
+      - hvtradesdb
+  hvtradesdb:
+    container_name: hvtradesdb
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=TradesDb
+    restart: always
+    ports:
+        - "15432:5432"
+    volumes:
+      - postgres_trades:/var/lib/postgresql/data/ 

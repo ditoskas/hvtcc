@@ -1,0 +1,12 @@
+services:
+  hvtradesdb:
+    image: postgres
+
+  hvt.trader:
+    image: ${DOCKER_REGISTRY-}hvttrader
+    build:
+      context: .
+      dockerfile: Presentation/Hvt.Trader/Dockerfile
+
+volumes:
+  postgres_trades:

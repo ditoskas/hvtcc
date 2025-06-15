@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Services\HttpClient\Binance\Binance.Data\Binance.Data.csproj" />
+    <ProjectReference Include="..\..\Services\HttpClient\Polygon\Polygon.Data\Polygon.Data.csproj" />
+  </ItemGroup>
+
+</Project>
